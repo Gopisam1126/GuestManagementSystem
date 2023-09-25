@@ -1,0 +1,151 @@
+:root{
+    --bgColor1: #5c5c5c;
+    --bgColorB: #000;
+    --mainHFontS: 12rem;
+    --mainSHFontS: 5rem;
+    --guestHColor: #008EFF;
+    --mainFontH: 'DM Sans', sans-serif;
+    --mainFontH2: 'Space Grotesk', sans-serif;
+    --colorW: #fff;
+    --arwFSize: 2rem;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#section1{
+    background-color: var(--bgColorB);
+    /* background: rgb(0,55,82);
+    background: linear-gradient(180deg, rgba(0,55,82,1) 0%, rgba(0,115,171,1) 59%, rgba(0,154,230,1) 100%); */
+    height: 60.59rem;
+    /* color: #008EFF; */
+    font-family: var(--mainFontH2);
+}
+.headContainer{
+    margin: 0rem 0 0 15rem;
+    padding: 18rem 0 0 0;
+}
+.mainHead{
+    font-size: var(--mainHFontS);
+    color: var(--guestHColor);
+}
+.mainSubHead{
+    font-size: var(--mainSHFontS);
+    color: #fff;
+}
+.headLinksContainer{
+    margin: 4rem 0 0 0;
+    display: flex;
+}
+.loginLinkCont{
+    margin-top: 0.5rem;
+    transition: 0.2s all linear;
+}
+/* Get Started button */
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 30px;
+    border: 0;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    border-radius: 10rem;
+    transition: all 0.02s;
+    font-weight: bold;
+    color: rgb(37, 37, 37);
+    z-index: 0;
+    box-shadow: 0 0px 7px -5px rgba(0, 0, 0, 0.5);
+    width: 12.5rem;
+    height: 3.5rem;
+}
+
+.button:hover {
+    background: rgb(193, 228, 248);
+    color: rgb(33, 0, 85);
+}
+
+.button:active {
+    transform: scale(0.97);
+}
+
+.hoverEffect {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.hoverEffect div {
+    background: rgb(222,0,75);
+    background: linear-gradient(90deg, rgba(222,0,75,1) 0%, rgba(191,70,255,1) 49%, rgba(0,212,255,1) 100%);
+    border-radius: 40rem;
+    width: 10rem;
+    height: 10rem;
+    transition: 0.4s;
+    filter: blur(20px);
+    animation: effect infinite 3s linear;
+    opacity: 0.5;
+}
+
+.button:hover .hoverEffect div {
+    width: 8rem;
+    height: 8rem;
+}
+
+@keyframes effect {
+  
+    0% {
+      transform: rotate(0deg);
+    }
+  
+    100% {
+      transform: rotate(360deg);
+    }
+}
+.loginLink{
+    color: var(--colorW);
+    text-decoration: none;
+    font-size: var(--arwFSize);
+    margin: 0rem 0 0 2.5rem;
+}
+.rghtArw{
+    color: var(--colorW);
+    transition: 0.2s all linear;
+}
+
+/* Main BOdy */
+
+/* .mainBodyCOntainer{
+    color: var(--colorW);
+    position: relative;
+}
+.navContainer{
+    position: absolute;
+    top: 22rem;
+    left: 45rem;
+}
+.navList{
+    display: flex;
+}
+.navList a{
+    color: var(--bgColor1);
+    text-decoration: none;
+    transition: 0.2s all linear;
+}
+.navList a:hover{
+    color: var(--colorW);
+}
+.navList a li{
+    list-style: none;
+    margin-left: 10.2rem;
+    font-size: 2rem;
+} */
