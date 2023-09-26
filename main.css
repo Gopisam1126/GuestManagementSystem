@@ -1,0 +1,52 @@
+:root{
+    --bgColor1: #5c5c5c;
+    --bgColorB: #000;
+    --mainHFontS: 12rem;
+    --mainSHFontS: 5rem;
+    --guestHColor: #008EFF;
+    --mainFontH: 'DM Sans', sans-serif;
+    --mainFontH2: 'Space Grotesk', sans-serif;
+    --colorW: #fff;
+    --arwFSize: 2rem;
+    /* btn */
+    --green: #1BFD9C;
+    --youListFS: 4rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+#mSec{
+    background-color: var(--bgColorB);
+    height: 500.59rem;
+    color: var(--colorW);
+    font-family: var(--mainFontH);
+}
+.headContainer{
+    font-family: var(--mainFontH);
+}
+.aLi2{
+    color: var(--colorW) !important;
+}
+
+/* Guest List */
+
+.guestListContainer{
+    margin: 10rem 0 0 0;
+}
+.yourList{
+    text-align: center;
+    font-size: var(--youListFS);
+    text-decoration: underline;
+    text-decoration-color: var(--guestHColor);
+    text-decoration-thickness: 0.8rem;
+}
+.yourListUndeLine{
+    width: 30rem;
+    margin: 0 0 0 45rem;
+    color: var(--guestHColor);
+}

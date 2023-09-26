@@ -124,14 +124,13 @@
 
 /* Main BOdy */
 
-/* .mainBodyCOntainer{
+.mainBodyCOntainer{
     color: var(--colorW);
     position: relative;
 }
 .navContainer{
-    position: absolute;
-    top: 22rem;
-    left: 45rem;
+    margin-top: 20rem;
+    margin-left: 45rem;
 }
 .navList{
     display: flex;
@@ -148,4 +147,4 @@
     list-style: none;
     margin-left: 10.2rem;
     font-size: 2rem;
-} */
+}
