@@ -34,3 +34,5 @@ function scrollFunction() {
     sideBar.style.width = "0rem";
   }
 }
+
+var favIcon = document.querySelectorAll(".stauts");
