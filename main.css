@@ -117,7 +117,7 @@ html {
 .lstStartHR{
     width: 100rem;
     margin: 2rem 0 0 9rem;
-    opacity: 0.5;
+    opacity: 0.2;
 }
 /* .aLi1:hover, .aLi22:hover, .aLi3:hover{
     color: var(--colorW);
@@ -266,3 +266,123 @@ html {
     color: lightblue;
     transform: translateY(-30px);
   }
+
+/* Modal  */
+
+.cListMContainer{
+    margin: 0 0 0 5rem;
+}
+.modal{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.4rem;
+    width: 50rem;
+    height: 60rem;
+    padding: 1.3rem;
+    min-height: 15.625rem;
+    position: absolute;
+    top: 50%;
+    left: 20%;
+    border: 1px solid #ddd;
+    border-radius: 0.938rem;
+    z-index: 1;
+    /* background-color: var(--green); */
+}
+.btn{
+    cursor: pointer;
+    list-style: none;
+    font-size: var(--fnFontS);
+    display: inline-block;
+    background: transparent;
+    border: none;
+    color: var(--bgColor1);
+    transition: 0.2s all linear;
+}
+.cMHead{
+    font-size: 2rem;
+    margin: 0 0 4rem 12rem;
+    text-decoration: underline;
+    text-decoration-color: var(--guestHColor);
+    text-decoration-thickness: 0.5rem;
+}
+.btn:hover{
+    color: var(--colorW);
+}
+.btn-close{
+    position: absolute;
+    top: 3rem;
+    left: 43rem;
+}
+.form-control label span{
+    font-size: 1.2rem;
+}
+.form-control input{
+    width: 20rem;
+}
+.overlay{
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+}
+.hidden{
+    /* display: none; */
+}
+
+/* Add Guests Btn */
+
+.addGBtn {
+    cursor: pointer;
+    position: relative;
+    height: 3.5em;
+    border: 3px ridge #149CEA;
+    outline: none;
+    background-color: transparent;
+    color: white;
+    transition: 1s;
+    border-radius: 0.3em;
+    font-size: 16px;
+    font-weight: bold;
+    top: 3rem;
+    left: 27rem;
+    width: 10em;
+}
+
+.addGBtn::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #212121;
+    transition: 0.5s;
+    transform-origin: center;
+}
+
+
+.addGBtn::before {
+    content: "";
+    transform-origin: center;
+    position: absolute;
+    top: 80%;
+    left: 3%;
+    width: 95%;
+    height: 40%;
+    background-color: #212121;
+    transition: 0.5s;
+}
+
+.addGBtn:hover::before, .addGBtn:hover::after {
+    transform: scale(0);
+}
+
+.addGBtn:hover {
+    box-shadow: inset 0px 0px 25px #1479EA;
+}

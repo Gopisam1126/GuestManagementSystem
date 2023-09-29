@@ -58,20 +58,34 @@
                         <div class="nav2Container navGuests">
                             <ul class="navList">
                                 <a href="javascript:void(0)" class="aLi1">
+
+                                </a>
                                     <div class="modal hidden">
                                         <div class="cListMContainer">
                                             <h3 class="cMHead">
                                                 Create Your List
                                             </h3>
                                             <div class="clFormCOntainer">
+                                                <button class="btn btn-close" onclick="closeModal()">
+                                                    <span class="material-symbols-outlined closeBtn" style="font-size: 2.3rem;">
+                                                        close
+                                                    </span>
+                                                </button>
                                                 <form action="" class="createListForm">
 
                                                     <!-- List Name -->
 
                                                     <div class="form-control">
-                                                        <input type="value" required="">
+                                                        <input type="value" required="" class="">
                                                         <label>
-                                                            <span style="transition-delay:0ms">L</span><span style="transition-delay:50ms">i</span><span style="transition-delay:100ms">s</span><span style="transition-delay:150ms">t</span><span style="transition-delay:200ms">n</span><span style="transition-delay:250ms">a</span><span style="transition-delay:300ms">m</span><span style="transition-delay:350ms">e</span>
+                                                            <span style="transition-delay:0ms">L</span>
+                                                            <span style="transition-delay:50ms">i</span>
+                                                            <span style="transition-delay:100ms">s</span>
+                                                            <span style="transition-delay:150ms">t</span>
+                                                            <span style="transition-delay:200ms">n</span>
+                                                            <span style="transition-delay:250ms">a</span>
+                                                            <span style="transition-delay:300ms">m</span>
+                                                            <span style="transition-delay:350ms">e</span>
                                                         </label>
                                                     </div> <br>
 
@@ -130,7 +144,7 @@
                                                     <!-- Category -->
 
                                                     <div class="form-control">
-                                                        <input type="value" required="">
+                                                        <!-- <input type="value" required=""> -->
                                                         <label>
                                                             <span style="transition-delay:0ms">C</span>
                                                             <span style="transition-delay:50ms">a</span>
@@ -148,12 +162,16 @@
                                                         </label>
                                                     </div> <br>
 
+                                                    <button class="addGBtn">
+                                                        CREATE
+                                                    </button>
+
                                                 </form>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="overlay hidden"></div>
-                                    <button class="btn btn-open">
+                                    <button class="btn btn-open" onclick="openModal()">
                                         <li>+ Create List</li>
                                     </button>
                                 </a>
