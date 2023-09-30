@@ -27,7 +27,7 @@
                 </button>
             </a>
         </div>
-        <form action="" class="container">
+        <form action="" method="get" class="container" onsubmit="verifyLogin()">
             <div class="input-container">
                 <div class="input-content">
                     <div class="input-dist">
@@ -35,7 +35,7 @@
                             <input placeholder="User" required="" type="text" class="input-is" id="userName">  
                             <input placeholder="Password" required="" type="password" class="input-is" id="pass">
                             <div class="lginBtnCOnt">
-                                <button class="lginBtn" onclick="verifyLogin()">LOG IN</button>
+                                <button class="lginBtn" type="submit">LOG IN</button>
                                 <button class="lginBtn rstBtn" type="reset">RESET</button>
                             </div>
                             <div class="frgtPassContainer">
@@ -50,4 +50,5 @@
           </form>
     </section>
 </body>
+<script src="./script.js"></script>
 </html>

@@ -43,13 +43,14 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Pass Verification
 
-var user = document.querySelector("#userName").value;
-var pass = document.querySelector("#pass").value;
-
 function verifyLogin() {
-  if (user === "Gopikrishnan1126" && pass === "12345678") { 
-    alert("verified..!");
+  var user = document.querySelector("#userName").value;
+  var pass = document.querySelector("$pass");
+  if (user == "" && pass == "") {
+    alert("Please Enter the necessary details!!!");
+  } else if (pass == "gopikrishnan" && user == "Gopikrishnan") {
+    alert("Login Successfull");
   } else {
-    alert("failed..!!!");
+    alert("Incorrect username or password!!!");
   }
 }

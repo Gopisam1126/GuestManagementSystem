@@ -1,0 +1,34 @@
+:root{
+    --bgColor1: #5c5c5c;
+    --bgColorB: #000;
+    --mainHFontS: 12rem;
+    --mainSHFontS: 5rem;
+    --guestHColor: #008EFF;
+    --mainFontH: 'DM Sans', sans-serif;
+    --mainFontH2: 'Space Grotesk', sans-serif;
+    --colorW: #fff;
+    --arwFSize: 2rem;
+    /* btn */
+    --green: #1BFD9C;
+    --youListFS: 4rem;
+    --fnFontS: 1.7rem;
+    --ListFontS: 1.5rem;
+    --marginListItem: 4rem 0 0 8rem;
+    --marginListIcon: 4rem 0 0 7rem;
+}
+html {
+    scroll-behavior: smooth;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.eventMainSec{
+    background-color: var(--bgColorB);
+    font-family: var(--mainFontH);
+    height: 100rem;
+}
+.eaLi3{
+    color: var(--colorW) !important;
+}
