@@ -1,6 +1,7 @@
+import Home from "./assets/pages/home"
 function App() {
   return <>
-    <p>Guest Management System</p>
+    <Home/>
   </>
 }
 
