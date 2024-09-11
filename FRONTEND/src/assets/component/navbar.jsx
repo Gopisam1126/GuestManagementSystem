@@ -1,7 +1,16 @@
+import { Link } from "react-router-dom";
 function Navbar() {
     return <>
         <section className="navbar-section">
-            <h1>Navbar</h1>
+            <div className="nav-container">
+                <ul className="nav-ul">
+                    <li className="nav-li">
+                        <Link to="/" className="nav-link">
+                            Home
+                        </Link>
+                    </li>
+                </ul>
+            </div>
         </section>
     </>
 }

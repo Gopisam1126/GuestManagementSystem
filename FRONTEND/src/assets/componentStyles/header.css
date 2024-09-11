@@ -1,0 +1,17 @@
+:root {
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+}
+.bg-image-container {
+    background: url("/hotel_conf_hall_red_bg.jpg");
+    background-position: center;
+    background-size: contain;
+    padding: 5rem 10vw 2rem 10vw;
+    height: 750px;
+}
+.nav-logo {
+    display: flex;
+    align-items: center;
+}
