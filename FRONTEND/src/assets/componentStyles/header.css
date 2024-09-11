@@ -5,13 +5,28 @@
     --colorF: #646464;
 }
 .bg-image-container {
+    position: relative;
     background: url("/hotel_conf_hall_red_bg.jpg");
     background-position: center;
-    background-size: contain;
+    background-size: cover;
     padding: 5rem 10vw 2rem 10vw;
     height: 750px;
 }
+
+.bg-image-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+}
+
 .nav-logo {
     display: flex;
     align-items: center;
+    position: relative;
+    z-index: 2;
 }
