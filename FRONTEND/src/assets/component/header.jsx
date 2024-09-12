@@ -16,6 +16,14 @@ function Header() {
                         <Navbar/>
                     </nav>
                 </div>
+                <div className="header-main-head">
+                    <h1 className="main-head">
+                        Luxury In Details
+                    </h1>
+                    <p className="main-head-sub-para">
+                        Where elegance meets unparalleled comfort.
+                    </p>
+                </div>
             </div>
         </section>
     </>

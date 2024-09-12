@@ -4,6 +4,9 @@
     --color1: #5E5E5E;
     --colorF: #646464;
 }
+.header-section {
+    color: var(--colorS);
+}
 .bg-image-container {
     position: relative;
     background: url("/hotel_conf_hall_red_bg.jpg");
@@ -23,6 +26,9 @@
     background-color: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
+/* .header-main-head {
+    
+} */
 
 .nav-logo {
     display: flex;
