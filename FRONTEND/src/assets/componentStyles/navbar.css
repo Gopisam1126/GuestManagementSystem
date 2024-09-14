@@ -23,10 +23,11 @@
 .nav-link {
     color: var(--colorS);
     text-decoration: none;
-    transition: 0.2s all linear;
-}.nav-link:hover{
-    font-size: 1.3rem;
+    /* transition: 0.2s all linear; */
 }
+/* .nav-link:hover{
+    font-size: 1.3rem;
+} */
 .nav-link:not(.nav-link1) {
     margin-left: 2vw;
 }

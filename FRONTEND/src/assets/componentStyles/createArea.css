@@ -1,0 +1,18 @@
+:root {
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+    --colorT: #FFF;
+
+    --font-s-p: 7rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.ca-section {
+    background-color: var(--colorP);
+    color: var(--colorS);
+    padding: 5rem 10vw;
+}
+.avail-inputs {
+    display: flex;
+}
