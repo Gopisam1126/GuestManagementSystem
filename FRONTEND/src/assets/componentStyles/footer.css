@@ -1,0 +1,65 @@
+:root {
+
+    /* Primary Color Pallet */
+
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.footer-section {
+    background-color: var(--colorSec1);
+    color: var(--colorS);
+    font-family: var(--font-fam-p);
+    padding: 5rem 10vw;
+}
+.footer-container, .f-contacts {
+    display: flex;
+    align-items: center;
+}
+.footer-logo {
+    margin-right: 10vw;
+}
+.f-contacts {
+    opacity: 0.6;
+    transition: all 0.2s ease-in-out;
+}
+.f-contacts:hover {
+    opacity: 1;
+}
+.f-contacts:not(.location-adrs) {
+    padding-top: 2rem;
+}
+.f-links-container {
+    margin-left: 10vw;
+}
+.footer-links {
+    list-style: none;
+    cursor: pointer;
+    opacity: 0.6;
+    transition: all 0.2s ease-in-out;
+}
+.footer-links:hover {
+    opacity: 1;
+}
+.footer-links:not(.f-reserv) {
+    padding-top: 2rem;
+}

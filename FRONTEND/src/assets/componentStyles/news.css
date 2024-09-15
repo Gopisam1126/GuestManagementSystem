@@ -59,7 +59,7 @@
     padding-top: 1.5rem;
 }
 .news-left-container, .news-right-container {
-    height: 40rem;
+    height: 50rem;
     width: 50vw;
 }
 .news-right-container {
@@ -69,7 +69,6 @@
     background-repeat: no-repeat;
 }
 .rgt-img {
-    height: 40rem;
+    height: 50rem;
     width: 70vw;
-    /* margin-left: 10vw; */
 }
