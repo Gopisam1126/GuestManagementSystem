@@ -1,18 +1,26 @@
 :root {
+
+    /* Primary Color Pallet */
+
     --colorP: #333333;
     --colorS: #AFA278;
     --color1: #5E5E5E;
     --colorF: #646464;
-    --colorT: #FFF;
 
-    --font-s-p: 7rem;
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-s: 4.32rem;
+    --font-size-h2: 3.2rem;
+    --font-size-h3: 2.67rem;
+    --font-size-btn: 1.6rem
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem
     --font-fam-p: "Raleway", sans-serif;
-}
-.ca-section {
-    background-color: var(--colorP);
-    color: var(--colorS);
-    padding: 5rem 10vw;
-}
-.avail-inputs {
-    display: flex;
 }

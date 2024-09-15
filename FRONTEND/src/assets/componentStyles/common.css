@@ -1,8 +1,22 @@
 :root {
+
+    /* Primary Color Pallet */
+
     --colorP: #333333;
     --colorS: #AFA278;
     --color1: #5E5E5E;
     --colorF: #646464;
+
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-fam-p: "Raleway", sans-serif;
 }
 *{
     margin: 0;
@@ -12,4 +26,7 @@
 .logo {
     height: 5rem;
     width: 15vw;
+}
+h1 {
+    font-size: var(--font-size-p);
 }
