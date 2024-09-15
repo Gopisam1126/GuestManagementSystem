@@ -10,7 +10,7 @@ function Header() {
             <div className="bg-image-container">
                 <div className="nav-logo">
                     <Link to="/">
-                        <img src="\logo-no-background-removebg-preview.png" alt="logo" className="logo" />
+                        <img src="/images/logo-no-background-removebg-preview.png" alt="logo" className="logo" />
                     </Link>
                     <nav className="navbar">
                         <Navbar/>

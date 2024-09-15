@@ -1,0 +1,75 @@
+:root {
+
+    /* Primary Color Pallet */
+
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.latest-news-sec {
+    background-color: var(--colorS);
+    color: var(--colorSec1);
+    font-family: var(--font-fam-p);
+}
+.ln-head {
+    padding-bottom: 3rem;
+}
+.news {
+    display: flex;
+    align-items: center;
+}
+.news:not(.news-1) {
+    margin-top: 3rem;
+}
+.news-img {
+    height: 6.25rem;
+    width: 7.25vw;
+    margin-right: 3vw;
+    border-radius: 10px;
+}
+.news-container {
+    display: flex;
+    justify-content: center;
+}
+.news-left-container {
+    padding: 5rem 10vw;
+}
+.e-name {
+    font-size: var(--font-size-btn1) !important;
+    font-weight: 800;
+    padding-top: 1.5rem;
+}
+.news-left-container, .news-right-container {
+    height: 40rem;
+    width: 50vw;
+}
+.news-right-container {
+    background: url("/images/event_2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.rgt-img {
+    height: 40rem;
+    width: 70vw;
+    /* margin-left: 10vw; */
+}

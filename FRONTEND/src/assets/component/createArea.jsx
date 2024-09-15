@@ -1,4 +1,5 @@
 import CheckAvailability from "./availability";
+import News from "./news";
 import "../componentStyles/common.css";
 import "../componentStyles/CreateArea.css";
 import RestaurantIcon from '@mui/icons-material/Restaurant';
@@ -60,6 +61,9 @@ function CreateArea() {
                             </p>
                         </div>
                     </div>
+                </div>
+                <div className="news-component">
+                    <News/>
                 </div>
             </div>
         </section>

@@ -13,7 +13,7 @@
 }
 .bg-image-container {
     position: relative;
-    background: url("/hotel_conf_hall_red_bg.jpg");
+    background: url("/images/hotel_conf_hall_red_bg.jpg");
     background-position: center;
     background-size: cover;
     padding: 5rem 10vw 2rem 10vw;
