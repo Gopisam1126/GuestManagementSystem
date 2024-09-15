@@ -12,15 +12,55 @@
     --colorSec1: #181C14;
     --colorSec2: #3C3D37;
     --colorSec3: #697565;
-    --coloeSec4: #ECDFCC;
+    --colorSec4: #ECDFCC;
 
     
     --font-size-p: 7rem;
     --font-size-s: 4.32rem;
     --font-size-h2: 3.2rem;
     --font-size-h3: 2.67rem;
-    --font-size-btn: 1.6rem
+    --font-size-btn: 1.6rem;
     --font-size-text: 1.3rem;
-    --font-size-li: 1.12rem
+    --font-size-li: 1.12rem;
     --font-fam-p: "Raleway", sans-serif;
+}
+
+.facilities-container {
+    background-color: var(--colorSec1);
+    padding: 5rem 10vw;
+}
+.hf-head {
+    font-family: var(--font-fam-p);
+    color: var(--colorS);
+    font-weight: 600;
+    text-align: center;
+}
+.facilities{
+    font-family: var(--font-fam-p);
+    display: flex;
+    padding-top: 5rem;
+}
+.head-icon {
+    text-align: center;
+}
+.fa-i-head {
+    padding-top: 2rem;
+    color: var(--colorS);
+}
+.fa {
+    padding: 2rem 2vw;
+    border: 0.5px solid #393939;
+    transition: border 0.4s linear;
+}
+.fa:not(.fa-1) {
+    margin-left: 2vw;
+}
+.fa:hover {
+    border: 0.5px solid #AFA278;
+}
+.fa-det {
+    padding-left: 1.5vw;
+    padding-top: 2rem;
+    color: var(--colorSec4);
+    opacity: 0.5;
 }
