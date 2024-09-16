@@ -8,3 +8,50 @@
     --font-s-p: 7rem;
     --font-fam-p: "Raleway", sans-serif;
 }
+.availability-sec {
+    font-family: var(--font-fam-p);
+    font-weight: 500;
+    padding: 5rem 10vw;
+}
+.chck-avail-head {
+    color: var(--colorS);
+    text-align: center;
+}
+
+.calendar-container {
+    display: none;
+    position: absolute;
+    width: 20vw;
+    z-index: 10;
+    border: 1px solid #AFA278;
+    background-color: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.open-arr, .open-dep {
+    display: block;
+}
+
+.avail-inputs {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.arrival-i, .departure-i {
+    display: flex;
+    width: 20vw;
+    border: 2px solid #AFA278;
+    border-radius: 5px;
+    padding: 1.2rem 3vw;
+}
+.arrival-date, .departure-date {
+    margin-bottom: 1.2rem;
+    margin-top: 4rem;
+}
+.arrival-date, .departure-date, .ph-departure, .placeholder-arr {
+    opacity: 0.5;
+}
+.span-date {
+    padding-left: 0.7vw;
+}
