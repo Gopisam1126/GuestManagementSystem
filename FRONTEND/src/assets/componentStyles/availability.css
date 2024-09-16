@@ -1,11 +1,28 @@
 :root {
+
+    /* Primary Color Pallet */
+
     --colorP: #333333;
     --colorS: #AFA278;
     --color1: #5E5E5E;
     --colorF: #646464;
-    --colorT: #FFF;
 
-    --font-s-p: 7rem;
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
     --font-fam-p: "Raleway", sans-serif;
 }
 .availability-sec {
@@ -36,7 +53,7 @@
 .avail-inputs {
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 9rem;
 }
 .arrival-i, .departure-i {
     display: flex;
@@ -54,4 +71,15 @@
 }
 .span-date {
     padding-left: 0.7vw;
+}
+.check-avail-btn {
+    width: 10rem;
+    border: 1px solid #AFA278;
+    border-radius: 5px;
+    background-color: #AFA278;
+    color: #fff;
+    font-size: var(--font-size-btn1);
+    padding: 1.2rem 1.2vw;
+    margin-top: 6.5rem;
+    cursor: pointer;
 }

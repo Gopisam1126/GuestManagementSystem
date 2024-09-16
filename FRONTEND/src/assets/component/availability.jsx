@@ -81,7 +81,7 @@ function CheckAvailability() {
                 </div>
                 <div className="avail-sub-btn">
                     <button className="check-avail-btn">
-                        Check
+                        CHECK
                     </button>
                 </div>
             </div>
