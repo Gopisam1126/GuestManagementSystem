@@ -26,6 +26,7 @@
     --font-fam-p: "Raleway", sans-serif;
 }
 .availability-sec {
+    background-color: #bcbcbc;
     font-family: var(--font-fam-p);
     font-weight: 500;
     padding: 5rem 10vw;
@@ -39,6 +40,7 @@
     display: none;
     position: absolute;
     width: 20vw;
+    padding: 0.9rem 0.9vw;
     z-index: 10;
     border: 1px solid #AFA278;
     background-color: rgba(255, 255, 255, 0.2);
@@ -77,7 +79,7 @@
     border: 1px solid #AFA278;
     border-radius: 5px;
     background-color: #AFA278;
-    color: #fff;
+    color: #cfcfcf;
     font-size: var(--font-size-btn1);
     padding: 1.2rem 1.2vw;
     margin-top: 6.5rem;
