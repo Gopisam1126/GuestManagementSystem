@@ -26,6 +26,20 @@
     --font-size-sm: 0.8rem;
     --font-fam-p: "Raleway", sans-serif;
 }
+html::-webkit-scrollbar {
+    width: 12px;
+}
+html::-webkit-scrollbar-track {
+    background: transparent; /* Background of the scrollbar track */
+}
+html::-webkit-scrollbar-thumb {
+    background-color: #333333; /* Color of the scrollbar thumb */
+    border-radius: 10px; /* Roundness of the scrollbar thumb */
+    border: 2px solid #f1f1f1; /* Optional: to create space around the thumb */
+}
+html::-webkit-scrollbar-thumb:hover {
+    background-color: #555555; /* Color on hover */
+}
 .current-month {
     padding: 5rem 0vw;
     font-family: var(--font-fam-p);
