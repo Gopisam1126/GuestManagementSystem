@@ -1,0 +1,118 @@
+:root {
+
+    /* Primary Color Pallet */
+
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+
+    --colorbckup: #f1f1f1;
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
+    --font-size-L: 1.8rem;
+    --font-size-med: 1rem;
+    --font-size-sm: 0.8rem;
+    --font-size-exsm: 0.5rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.contact-section {
+    padding-right: 10vw;
+}
+.contact-body-container {
+    display: flex;
+    gap: 5rem;
+    font-family: var(--font-fam-p);
+    position: relative;
+    top: 9.1rem;
+}
+.contact-header {
+    background-color: rgba(24, 28, 20, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    padding-left: 10vw;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    z-index: 10;
+}
+.contact-left-section {
+    background-color: var(--colorbckup);
+    width: 50%;
+    padding: 2rem 5vw;
+}
+.contact-right-section {
+    width: 50%;
+}
+.send-msg-head {
+    color: var(--colorS);
+}
+.msg-to-user {
+    font-size: var(--font-size-sm);
+    margin-top: 1.5rem;
+}
+.contact-name, .contact-email, #c-msg {
+    border: 2.3px solid #AFA278;
+    padding: 0.7rem 1.2vw;
+    width: 30vw;
+    margin-top: 2rem;
+    font-size: var(--font-size-med);
+}
+#c-msg {
+    height: 10rem;
+}
+#c-msg:focus {
+    outline: none;
+}
+.c-snd-msg {
+    background-color: var(--colorS);
+    color: var(--colorbckup);
+    padding: 0.5rem 0.5vw;
+    border: 1px solid transparent;
+    font-size: var(--font-size-text);
+    width: 15vw;
+    margin-top: 2rem;
+}
+.get-in-touch {
+    color: var(--colorS);
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+.location, .c-info-email, .c-info-phone {
+    display: flex;
+    align-items: center;
+    margin-top: 1.5rem;
+}
+.c-icons {
+    color: var(--colorS);
+    margin-right: 0.5vw;
+}
+.c-r-msg {
+    padding-top: 2rem;
+}
+.social-icons {
+    display: flex;
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+.s-icons {
+    color: var(--colorS);
+    cursor: pointer;
+}
