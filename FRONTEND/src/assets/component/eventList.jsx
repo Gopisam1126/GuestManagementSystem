@@ -22,12 +22,15 @@ function EventList() {
                     <p className="time">
                         7:00 pm - 11:00 pm
                     </p>
-                    <p className="name">
+                    <p className="evnt-name">
                         MUSIC CONCERT
                     </p>
                     <p className="details">
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquam nam provident maxime quia magnam soluta quam debitis quis saepe qui?
                     </p>
+                </div>
+                <div className="event-image">
+                    <img src="\images\party_1.jpg" alt="event-image" className="e-image" />
                 </div>
             </div>
         </section>        
