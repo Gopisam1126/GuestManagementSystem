@@ -7,6 +7,7 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import XIcon from '@mui/icons-material/X';
 import InstagramIcon from '@mui/icons-material/Instagram';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import Footer from "../component/footer";
 function Contact() {
     return <>
         <section className="contact-section">
@@ -80,6 +81,9 @@ function Contact() {
                 </div>
             </div>
         </section>
+        <div className="contact-footer">
+            <Footer/>
+        </div>
     </>
 }
 

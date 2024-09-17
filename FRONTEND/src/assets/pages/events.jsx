@@ -4,7 +4,8 @@ import EventList from "../component/eventList";
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 import EventBusyIcon from '@mui/icons-material/EventBusy';
-import "../pageStyles/events.css"
+import Footer from "../component/footer";
+import "../pageStyles/events.css";
 function Events() {
 
     const d = new Date();
@@ -58,6 +59,9 @@ function Events() {
                     <EventList/>
                 </div>
             </div>
+        </section>
+        <section className="events-footer">
+            <Footer/>
         </section>
     </>
 }
