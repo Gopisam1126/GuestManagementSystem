@@ -3,7 +3,7 @@ import Header2 from "../component/header2";
 import EventList from "../component/eventList";
 import SearchIcon from '@mui/icons-material/Search';
 import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
-// import EventBusyIcon from '@mui/icons-material/EventBusy';
+import EventBusyIcon from '@mui/icons-material/EventBusy';
 import "../pageStyles/events.css"
 function Events() {
 
@@ -33,9 +33,6 @@ function Events() {
                     <input type="text" className="searchbox" placeholder="SEARCH FOR EVENTS" />
                     <input type="submit" value="FIND EVENTS" className="find-events-btn" />
                 </div>
-                <div className="event-list-container">
-                    <EventList/>
-                </div>
                 <div className="current-month">
                     <p className="c-month">
                         {monthName}
@@ -48,6 +45,17 @@ function Events() {
                             }}/>
                         </span>
                     </p>
+                </div>
+                <div className="upcomming-events-c">
+                    <EventBusyIcon style={{
+                        marginRight: "0.4rem"
+                    }}/>
+                    <p className="upcmng-e-msg">
+                        There are no Upcomming Events
+                    </p>
+                </div>
+                <div className="event-list-container">
+                    <EventList/>
                 </div>
             </div>
         </section>

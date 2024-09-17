@@ -39,3 +39,30 @@
 .c-yr {
     margin-left: 0.9rem;
 }
+.events-list-sec {
+    padding-bottom: 5rem;
+}
+.ev-lists {
+    display: flex;
+    align-items: center;
+    padding-top: 5rem;
+}
+.event-date-cal {
+    margin-right: 5vw;
+}
+.event-month {
+    background-color: var(--colorS);
+    width: 7vw;
+    text-align: center;
+    padding: 0.5rem 0.5vw;
+    font-size: var(--font-size-sm);
+    color: #fff;
+}
+.event-date {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 5rem;
+    width: 7vw;
+    border: 1px solid #333333;
+}
