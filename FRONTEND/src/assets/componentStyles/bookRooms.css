@@ -1,0 +1,76 @@
+:root {
+
+    /* Primary Color Pallet */
+
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+
+    --colorbckup: #f1f1f1;
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
+    --font-size-L: 1.8rem;
+    --font-size-med: 1rem;
+    --font-size-sm: 0.8rem;
+    --font-size-exsm: 0.5rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.rooms-list-container {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+    padding: 3rem 10vw;
+}
+.rb-main-head {
+    padding: 2rem 10vw;
+    color: var(--colorS);
+}
+.room-list {
+    border: 1px solid #f1f1f1;
+    padding: 1.2rem 1.2vw;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+.room-list:hover {
+    border: 1px solid #AFA278;
+}
+.room-thumbnail {
+    width: 16vw;
+    height: 15rem;
+}
+.room-name {
+    font-size: var(--font-size-L);
+    font-weight: 700;
+    padding-top: 1.1rem;
+    color: var(--colorS);
+    word-wrap: break-word;
+}
+.room-type {
+    font-size: var(--font-size-med);
+    color: var(--colorS);
+    font-weight: 500;
+    padding-top: 0.5rem;
+}
+.room-price {
+    font-weight: 700;
+    padding-top: 0.5rem;
+}
+.room-price span {
+    font-weight: 400 !important;
+    opacity: 0.7;
+}
