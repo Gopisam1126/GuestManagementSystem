@@ -7,6 +7,8 @@
     --color1: #5E5E5E;
     --colorF: #646464;
 
+    --colorbckup: #f1f1f1;
+
     /* Secondary Color Pallet */
 
     --colorSec1: #181C14;
@@ -30,6 +32,39 @@
     --font-fam-p: "Raleway", sans-serif;
 }
 .room-detail-thumbnail {
-    width: 16vw;
-    height: 15rem;
+    width: 50vw;
+    height: 30rem;
+}
+.room-details-header {
+    background-color: rgba(24, 28, 20, 0.8);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    position: fixed;
+    top: 0rem;
+    left: 0;
+    padding-left: 10vw;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    width: 100%;
+    z-index: 10;
+}
+.room-det-body-container {
+    display: flex;
+    gap: 2rem;
+    font-family: var(--font-fam-p);
+    position: relative;
+    top: 9.2rem;
+}
+.left-details {
+    padding-top: 2rem;
+    padding-left: 5vw;
+}
+.right-aminities {
+    width: 50%;
+    padding: 2rem 2vw;
+    /* color: var(--colorS); */
+    background-color: var(--colorbckup);
+}
+.amenities-head {
+    text-transform: uppercase;
 }
