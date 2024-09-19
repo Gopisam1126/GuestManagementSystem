@@ -34,3 +34,14 @@
 .amenities-head {
     color: var(--colorS);
 }
+.amenities-table{
+    padding-top: 2rem;
+    border-collapse: separate;
+    border-spacing: 0 2rem;
+}
+.amenities-table td.detail-label {
+    font-weight: 600;
+}
+.amenities-table td.detail-value {
+    padding-left: 2.5vw;
+}
