@@ -2,6 +2,7 @@ import Home from "./assets/pages/home";
 import Booking from "./assets/pages/booking";
 import Events from "./assets/pages/events";
 import Contact from "./assets/pages/contact";
+import RoomDetails from "./assets/pages/roomDetails";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
   return <>
@@ -11,6 +12,7 @@ function App() {
         <Route path="/booking" element={<Booking/>}/>
         <Route path="/events" element={<Events/>}/>
         <Route path="/contact" element={<Contact/>}/>
+        <Route path="/rooms/:id" element={<RoomDetails/>}/>
       </Routes>
     </Router>
   </>

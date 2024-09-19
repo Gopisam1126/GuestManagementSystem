@@ -1,0 +1,35 @@
+:root {
+
+    /* Primary Color Pallet */
+
+    --colorP: #333333;
+    --colorS: #AFA278;
+    --color1: #5E5E5E;
+    --colorF: #646464;
+
+    /* Secondary Color Pallet */
+
+    --colorSec1: #181C14;
+    --colorSec2: #3C3D37;
+    --colorSec3: #697565;
+    --coloeSec4: #ECDFCC;
+
+    
+    --font-size-p: 7rem;
+    --font-size-h2: 5.2rem;
+    --font-size-s: 4.32rem;
+    --font-size-h3: 3.67rem;
+    --font-size-h4: 2rem;
+    --font-size-btn1: 1.6rem;
+    --font-size-text: 1.3rem;
+    --font-size-li: 1.12rem;
+    --font-size-L: 1.8rem;
+    --font-size-med: 1rem;
+    --font-size-sm: 0.8rem;
+    --font-size-exsm: 0.5rem;
+    --font-fam-p: "Raleway", sans-serif;
+}
+.room-detail-thumbnail {
+    width: 16vw;
+    height: 15rem;
+}

@@ -69,6 +69,7 @@
 .room-price {
     font-weight: 700;
     padding-top: 0.5rem;
+    color: #000;
 }
 .room-price span {
     font-weight: 400 !important;

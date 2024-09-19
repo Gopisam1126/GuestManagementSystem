@@ -8,108 +8,108 @@ const Rooms = [
     },
     {
         id: 2,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        imgUrl: "/images/room_blue_d_ms.jpg",
+        name: "Double Medium",
+        type: "Suite",
+        price: "$332.0"
     },
     {
         id: 3,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        imgUrl: "/images/room_d_d_ms.jpg",
+        name: "Double King",
+        type: "Suite",
+        price: "$553.0"
     },
     {
         id: 4,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_KS.jpg",
+        name: "King Double",
         type: "Room",
-        price: "$253.0"
+        price: "$402.0"
     },
     {
         id: 5,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_L.jpg",
+        name: "Large Double",
         type: "Room",
-        price: "$253.0"
+        price: "$321.0"
     },
     {
         id: 6,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        imgUrl: "/images/room_d_ms.jpg",
+        name: "Meduim Double",
+        type: "Suite",
+        price: "$250.0"
     },
     {
         id: 7,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_s2.jpg",
+        name: "Double Small",
         type: "Room",
-        price: "$253.0"
+        price: "$233.0"
     },
     {
         id: 8,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_s_L.jpg",
+        name: "Single Large",
         type: "Room",
-        price: "$253.0"
+        price: "$189.0"
     },
     {
         id: 9,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_s_s1.jpg",
+        name: "Single Small",
         type: "Room",
-        price: "$253.0"
+        price: "$146.0"
     },
     {
         id: 10,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        imgUrl: "/images/pexels-alex-qian-1180283-2343468.jpg",
+        name: "Single Large",
+        type: "Suite",
+        price: "$468.0"
     },
     {
         id: 11,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_ms4.jpg",
+        name: "Medium Double",
         type: "Room",
-        price: "$253.0"
+        price: "$263.0"
     },
     {
         id: 12,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_s.jpg",
+        name: "Double Small",
         type: "Room",
-        price: "$253.0"
+        price: "$222.0"
     },
     {
         id: 13,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        imgUrl: "/images/room_d_ms2.jpg",
+        name: "Medium Double",
+        type: "Suite",
+        price: "$321.0"
     },
     {
         id: 14,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/room_d_ms3.jpg",
+        name: "Medium Double",
         type: "Room",
-        price: "$253.0"
+        price: "$276.0"
     },
     {
         id: 15,
-        imgUrl: "/images/hotel_room_bed.jpg",
+        imgUrl: "/images/pexels-fotoaibe-1571459.jpg",
         name: "Superior Double",
-        type: "Room",
-        price: "$253.0"
+        type: "Suite",
+        price: "$753.0"
     },
     {
         id: 16,
-        imgUrl: "/images/hotel_room_bed.jpg",
-        name: "Superior Double",
+        imgUrl: "/images/pexels-vika-glitter-392079-1648776.jpg",
+        name: "Double Class",
         type: "Room",
-        price: "$253.0"
+        price: "$553.0"
     },
 ]
 
