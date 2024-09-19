@@ -9,21 +9,21 @@ const Rooms = [
     {
         id: 2,
         imgUrl: "/images/room_blue_d_ms.jpg",
-        name: "Double Medium",
+        name: "Family Special",
         type: "Suite",
-        price: "$332.0"
+        price: "$432.0"
     },
     {
         id: 3,
         imgUrl: "/images/room_d_d_ms.jpg",
-        name: "Double King",
+        name: "Double Twin",
         type: "Suite",
         price: "$553.0"
     },
     {
         id: 4,
         imgUrl: "/images/room_d_KS.jpg",
-        name: "King Double",
+        name: "Superior Family ",
         type: "Room",
         price: "$402.0"
     },
@@ -65,7 +65,7 @@ const Rooms = [
     {
         id: 10,
         imgUrl: "/images/pexels-alex-qian-1180283-2343468.jpg",
-        name: "Single Large",
+        name: "Delux Single",
         type: "Suite",
         price: "$468.0"
     },
@@ -79,7 +79,7 @@ const Rooms = [
     {
         id: 12,
         imgUrl: "/images/room_d_s.jpg",
-        name: "Double Small",
+        name: "Standard Single",
         type: "Room",
         price: "$222.0"
     },
@@ -93,22 +93,22 @@ const Rooms = [
     {
         id: 14,
         imgUrl: "/images/room_d_ms3.jpg",
-        name: "Medium Double",
+        name: "Standard Double",
         type: "Room",
         price: "$276.0"
     },
     {
         id: 15,
         imgUrl: "/images/pexels-fotoaibe-1571459.jpg",
-        name: "Superior Double",
+        name: "Presidential",
         type: "Suite",
         price: "$753.0"
     },
     {
         id: 16,
         imgUrl: "/images/pexels-vika-glitter-392079-1648776.jpg",
-        name: "Double Class",
-        type: "Room",
+        name: "Delux Family",
+        type: "Suite",
         price: "$553.0"
     },
 ]
