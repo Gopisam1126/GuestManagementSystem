@@ -30,18 +30,18 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true}));
 
-app.post("/addroom", upload.single('roomimg'), async (req, res) => {
+app.post("/addroom", upload.single('roomImg'), async (req, res) => {
     const {roomname, staytype, roomprice} = req.body;
-    const roomimg = req.file;
+    const roomImg = req.file;
 
-    if (!roomimg) {
+    if (!roomImg) {
         console.log("Error File not Found!!!");
         return res.status(400).send("No file Uploaded!");
     }
 
     try {
         const addroomres = pg.query(
-            `INSERT INTO royalrooms (roomimg, roomname, staytype, roomprice) VALUES ($1, $2, $3, $4) RETURNING *`, [roomimg.buffer, roomname, staytype, roomprice]
+            `INSERT INTO royalrooms (roomimg, roomname, staytype, roomprice) VALUES ($1, $2, $3, $4) RETURNING *`, [roomImg.buffer, roomname, staytype, roomprice]
         );
 
         res.json((await addroomres).rows[0]);

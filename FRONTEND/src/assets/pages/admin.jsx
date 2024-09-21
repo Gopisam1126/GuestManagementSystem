@@ -1,6 +1,49 @@
 import Header2 from "../component/header2";
+import axios from "axios";
 import "../pageStyles/admin.css";
+import { useState } from "react";
 function Admin() {
+
+    const [formData, setFormData] = useState({
+        roomname: "",
+        staytype: "",
+        roomprice: ""
+    });
+    const [roomImg, setRoomImg] = useState(null);
+    const [Uploaded, setUploaded] = useState(null)
+
+    function handleInputChange(e) {
+        setFormData({...formData, [e.target.name]: e.target.value});
+    }
+
+    function handleFileChange(e) {
+        setRoomImg(e.target.files[0]);
+    }
+
+    async function handleSubmit(e) {
+        e.preventDefault();
+
+        const data = new FormData();
+        data.append('roomImg', roomImg);
+        Object.keys(formData).forEach((key) => {
+            data.append(key, formData[key]);
+        });
+
+        try {
+            const response = await axios.post("http://localhost:3000/addroom", data, {
+                headers : {
+                    'Content-Type' : 'multipart/form-data',
+                },
+            });
+            setUploaded(true);
+            console.log("Room Details Uploaded", response.data);
+            
+        } catch (err) {
+            console.log(err);
+            setUploaded(false);
+        }
+    }
+
     return <>
         <section className="admin-section">
             <div className="admin-header">
@@ -19,13 +62,18 @@ function Admin() {
                         <h4 className="add-room-head">
                             Add Room Details
                         </h4>
-                        <form action="/addroom">
+                        <form onSubmit={handleSubmit}>
                             <label htmlFor="roomImg">Room Image : </label>
-                            <input type="file" name="roomImg" id="room-img" className="ad-room-img" /> <br />
-                            <input type="text" placeholder="Add Room Name" className="ad-room-name" name="roomname" /><br />
-                            <input type="text" placeholder="Add Type" className="type-stay" name="staytype" /><br />
-                            <input type="text" placeholder="Add Price" className="ad-room-price" name="roomprice" /><br />
+                            <input type="file" name="roomImg" id="room-img" className="ad-room-img" accept="image/*" onChange={handleFileChange} /> <br />
+                            <input type="text" placeholder="Add Room Name" className="ad-room-name" name="roomname" onChange={handleInputChange} /><br />
+                            <input type="text" placeholder="Add Type" className="type-stay" name="staytype" onChange={handleInputChange} /><br />
+                            <input type="text" placeholder="Add Price" className="ad-room-price" name="roomprice" onChange={handleInputChange} /><br />
                             <input type="submit" value="Submit" />
+                            <p>
+                                {
+                                    Uploaded ? "Data Uploaded" : "Error Uploading"
+                                }
+                            </p>
                         </form>
                     </div>
                     <div className="add-amenities-container">
