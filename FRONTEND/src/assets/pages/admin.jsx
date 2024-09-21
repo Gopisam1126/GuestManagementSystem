@@ -19,12 +19,12 @@ function Admin() {
                         <h4 className="add-room-head">
                             Add Room Details
                         </h4>
-                        <form action="/additem">
+                        <form action="/addroom">
                             <label htmlFor="roomImg">Room Image : </label>
                             <input type="file" name="roomImg" id="room-img" className="ad-room-img" /> <br />
-                            <input type="text" placeholder="Add Room Name" className="ad-room-name" /><br />
-                            <input type="text" placeholder="Add Type" className="type-stay" /><br />
-                            <input type="text" placeholder="Add Price" className="ad-room-price" /><br />
+                            <input type="text" placeholder="Add Room Name" className="ad-room-name" name="roomname" /><br />
+                            <input type="text" placeholder="Add Type" className="type-stay" name="staytype" /><br />
+                            <input type="text" placeholder="Add Price" className="ad-room-price" name="roomprice" /><br />
                             <input type="submit" value="Submit" />
                         </form>
                     </div>
