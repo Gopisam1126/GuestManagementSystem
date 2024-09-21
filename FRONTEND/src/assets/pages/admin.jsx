@@ -19,20 +19,20 @@ function Admin() {
                         <h4 className="add-room-head">
                             Add Room Details
                         </h4>
-                        {/* <form action="/additem"> */}
+                        <form action="/additem">
                             <label htmlFor="roomImg">Room Image : </label>
                             <input type="file" name="roomImg" id="room-img" className="ad-room-img" /> <br />
                             <input type="text" placeholder="Add Room Name" className="ad-room-name" /><br />
                             <input type="text" placeholder="Add Type" className="type-stay" /><br />
                             <input type="text" placeholder="Add Price" className="ad-room-price" /><br />
                             <input type="submit" value="Submit" />
-                        {/* </form> */}
+                        </form>
                     </div>
                     <div className="add-amenities-container">
                         <h4 className="add-amenities">
                             Add Amenities
                         </h4>
-                        {/* <form action="/addaminities"> */}
+                        <form action="/addaminities">
                             <label htmlFor="size">Size</label>
                             <input type="text" /><br />
                             <label htmlFor="entertainment">Entertainment</label>
@@ -52,7 +52,28 @@ function Admin() {
                             <label htmlFor="extras">Extras</label>
                             <input type="text" /><br />
                             <input type="submit" value="Submit" />
-                        {/* </form> */}
+                        </form>
+                    </div>
+                    <div className="add-events-container">
+                        <h4 className="ad-events-head">
+                            Add Events
+                        </h4>
+                        <form action="/addevents">
+                            <input type="text" placeholder="Event Name / Type" /><br />
+                            <label htmlFor="event-date">Event Date : </label>
+                            <input type="date" name="event-date" id="event-date" /><br />
+                            <div className="event-duration">
+                                <p className="duration">Duration : </p>
+                                <label htmlFor="event-duration-from">From</label>
+                                <input type="time" name="event-duration-from" id="e-d-f" /><br />
+                                <label htmlFor="event-duration-to">To : </label>
+                                <input type="time" name="event-duration-to" id="e-d-t" />
+                            </div>
+                            <textarea name="event-desc" id="ad-event-desc" className="ad-event-desc" placeholder="Event Description"></textarea><br />
+                            <label htmlFor="event-img">Event Image : </label>
+                            <input type="file" name="event-img" id="ad-event-img" />
+                            <input type="submit" value="Submit" className="submit-e-det" />
+                        </form>
                     </div>
                 </div>
             </div>
