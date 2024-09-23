@@ -82,6 +82,24 @@ app.post("/addroom", upload.single('roomImg'), async (req, res) => {
     }
 });
 
+app.post("/addrf", async (req, res) => {
+    const {ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras} = req.body;
+
+    if (!ad_r_size || !ad_r_E || !ad_r_C || !ad_r_BS || !ad_r_G || !ad_r_L || !ad_r_O || !ad_r_R || !ad_r_Extras) {
+        return res.status(400).json({ error: 'All fields are required' });
+    }
+
+    try {
+        const addroomftrs = await pg.query(
+            `INSERT INTO roomfeatures (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING*`, [ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras]
+        );
+
+        res.json(addroomftrs.rows[0]);
+    } catch (error) {
+        console.log("Error uploading Data!!", error);
+    }
+})
+
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
 });
