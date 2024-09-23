@@ -73,11 +73,15 @@ function Admin() {
                         <h4 className="ad-room-head">Rooms List</h4>
                         <ul>
                             {rooms.map((room) => (
-                                <li key={room.room_id}>
-                                    <img src={`data:${room.mimeType};base64,${room.file}`} alt="Room" className="ad-room-img" />
-                                    <p className="ad-room-name">{room.roomname}</p>
-                                    <p className="ad-stay-type">{room.staytype}</p>
-                                    <p className="ad-room-price">${room.roomprice}</p>
+                                <li key={room.room_id} className="room-item-list">
+                                    <div className="image-container">
+                                        <img src={`data:${room.mimeType};base64,${room.file}`} alt="Room" className="ad-room-img" />
+                                    </div>
+                                    <div className="desc-container">
+                                        <p className="ad-room-name">{room.roomname}</p>
+                                        <p className="ad-stay-type">{room.staytype}</p>
+                                        <p className="ad-room-price">${room.roomprice}</p>
+                                    </div>
                                 </li>
                             ))}
                         </ul>
@@ -96,7 +100,7 @@ function Admin() {
                             </form>
                         </div>
                         <div className="add-amenities-container">
-                            <h4 className="add-amenities">Add Amenities</h4>
+                            <h4 className="add-amenities">Add Room Features</h4>
                             <form action="/addamenities">
                                 <label htmlFor="size">Size</label>
                                 <input type="text" /><br />

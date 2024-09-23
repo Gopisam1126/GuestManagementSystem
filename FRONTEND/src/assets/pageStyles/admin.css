@@ -50,8 +50,18 @@
     font-family: var(--font-fam-p);
     position: relative;
     top: 9.1rem;
+    padding-left: 10vw;
+}
+.room-item-list {
+    display: flex;
 }
 .ad-room-img {
     width: 7vw;
     height: 8rem;
+    margin-right: 1.2vw;
+}
+.admin-room-lists ul {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2vw;
 }
