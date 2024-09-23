@@ -62,12 +62,13 @@ app.get("/roomdetails", async (req, res) => {
 });
 
 app.get("/getFeatures", async (req, res) => {
-    // console.log("Received request for /getFeatures");
     try {
         const query = `
             SELECT 
                 royalrooms.room_id, 
                 royalrooms.roomname, 
+                royalrooms.staytype,
+                royalrooms.roomprice,
                 roomfeatures.feature_id, 
                 roomfeatures.size, 
                 roomfeatures.entertainment, 
@@ -84,15 +85,43 @@ app.get("/getFeatures", async (req, res) => {
         `;
         
         const featureRes = await pg.query(query);
-        // console.log(featureRes);
         const roomFeatures = featureRes.rows;
-        // console.log(roomFeatures);
+
+        // console.log("roomFeatures data:", roomFeatures); // Log the raw data
 
         if (roomFeatures.length > 0) {
-            const features = roomFeatures.map((room) => {
-                const { size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras } = room;
+            // Group features by room_id
+            const roomsWithFeatures = roomFeatures.reduce((acc, room) => {
+                const {
+                    room_id,
+                    roomname,
+                    staytype,
+                    roomprice,
+                    feature_id,
+                    size,
+                    entertainment,
+                    connectivity,
+                    btlr_service,
+                    guests,
+                    location_r,
+                    occupancy,
+                    refreshment,
+                    extras
+                } = room;
 
-                return {
+                // If the room hasn't been added yet, create a new entry
+                if (!acc[room_id]) {
+                    acc[room_id] = {
+                        room_id,
+                        roomname,
+                        staytype,
+                        roomprice,
+                        features: []
+                    };
+                }
+
+                const feature = {
+                    feature_id,
                     size,
                     entertainment,
                     connectivity,
@@ -103,8 +132,20 @@ app.get("/getFeatures", async (req, res) => {
                     refreshment,
                     extras
                 };
-            });
-            res.json(features);
+
+                // console.log("Adding feature to room:", feature); // Correct logging
+
+                // Push the features associated with this room
+                acc[room_id].features.push(feature);
+
+                return acc;
+            }, {});
+
+            // Convert the object to an array for easier handling in the frontend
+            const result = Object.values(roomsWithFeatures);
+            console.log("Structured Data:", result); // Log the structured data
+
+            res.json(result);
         } else {
             console.log("No features found for rooms.");
             res.status(404).send("No features found for rooms.");
@@ -114,6 +155,7 @@ app.get("/getFeatures", async (req, res) => {
         res.status(500).send("Error retrieving data.");
     }
 });
+
 
 
 app.post("/addroom", upload.single('roomImg'), async (req, res) => {
