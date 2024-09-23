@@ -61,6 +61,36 @@ app.get("/roomdetails", async (req, res) => {
     }
 });
 
+app.get("/getFeatures", async (req, res) => {
+    try {        
+        const featureResp = await pg.query(
+            `SELECT * FROM roomfeatures`
+        );
+        if (featureResp.rows.length > 0) {
+            const features = await Promise.all(featureResp.rows.map(async (room) => {
+                let {size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras} = room;
+
+                return {
+                    size,
+                    entertainment,
+                    connectivity,
+                    btlr_service,
+                    guests,
+                    location_r,
+                    occupancy,
+                    refreshment,
+                    extras
+                };
+            }));
+            res.json(features);
+        } else {
+            console.log("Error Fetching Features!!!");
+        }
+    } catch (error) {
+        console.log("Error Fetcging Data", error);
+    }
+})
+
 app.post("/addroom", upload.single('roomImg'), async (req, res) => {
     const { roomname, staytype, roomprice } = req.body;
     const roomImg = req.file;

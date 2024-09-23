@@ -5,6 +5,8 @@ import "../pageStyles/roomDetails.css";
 import Amenities from "../component/amenities";
 function RoomDetails() {
 
+ 
+
     const { id } = useParams();
     const room = Rooms.find((room) => room.id === parseInt(id));
 

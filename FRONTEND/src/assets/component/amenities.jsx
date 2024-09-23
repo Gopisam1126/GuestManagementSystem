@@ -1,5 +1,23 @@
-import "../componentStyles/amenities.css"
+import { useEffect, useState } from "react";
+import "../componentStyles/amenities.css";
+import axios from "axios";
 function Amenities() {
+
+    const [featureData, setFeatureData] = useState([])
+
+    useEffect(() => {
+
+        async function getFeatures() {
+            try {
+                const featureRes = await axios.get("http://localhost:3000/getFeatures");
+                setFeatureData(featureRes.data)
+            } catch (error) {
+                console.log("Error Feteching Features!!!", error);
+            }
+        }
+        getFeatures();
+    }, []);
+
     return <>
         <section className="amenities-section">
             <h4 className="amenities-head">
@@ -7,7 +25,12 @@ function Amenities() {
             </h4>
             <table className="amenities-table">
                 <tbody className="t-body">
-                    <tr className="table-row tr-1">
+                    {featureData.map((feature) => (
+                        <tr key={feature.feature_id}>
+                            <td className="detail-value">{feature.size} square inch</td>
+                        </tr>
+                    ))}
+                    {/* <tr className="table-row tr-1">
                         <td className="detail-label dl-1">Size</td>
                         <td className="detail-value">175 square feet</td>
                     </tr>
@@ -42,7 +65,7 @@ function Amenities() {
                     <tr className="table-row">
                         <td className="detail-label">Extras</td>
                         <td className="detail-value">Jacuzzi</td>
-                    </tr>
+                    </tr> */}
                 </tbody>
             </table>
         </section>
