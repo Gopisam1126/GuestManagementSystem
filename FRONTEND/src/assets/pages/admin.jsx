@@ -119,13 +119,13 @@ function Admin() {
                         <ul>
                             {rooms.map((room) => (
                                 <li key={room.room_id} className="room-item-list">
-                                    <div className="image-container">
-                                        <img src={`data:${room.mimeType};base64,${room.file}`} alt="Room" className="ad-room-img" />
+                                    <div className="image-container" key={room.room_id}>
+                                        <img src={`data:${room.mimeType};base64,${room.file}`} alt="Room" className="ad-room-img" key={room.room_id} />
                                     </div>
-                                    <div className="desc-container">
-                                        <p className="ad-room-name">{room.roomname}</p>
-                                        <p className="ad-stay-type">{room.staytype}</p>
-                                        <p className="ad-room-price">${room.roomprice}</p>
+                                    <div className="desc-container" key={room.room_id}>
+                                        <p className="ad-room-name" key={room.room_id}>{room.roomname}</p>
+                                        <p className="ad-stay-type" key={room.room_id}>{room.staytype}</p>
+                                        <p className="ad-room-price" key={room.room_id}>${room.roomprice}</p>
                                     </div>
                                 </li>
                             ))}

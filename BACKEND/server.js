@@ -62,13 +62,35 @@ app.get("/roomdetails", async (req, res) => {
 });
 
 app.get("/getFeatures", async (req, res) => {
-    try {        
-        const featureResp = await pg.query(
-            `SELECT * FROM roomfeatures`
-        );
-        if (featureResp.rows.length > 0) {
-            const features = await Promise.all(featureResp.rows.map(async (room) => {
-                let {size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras} = room;
+    // console.log("Received request for /getFeatures");
+    try {
+        const query = `
+            SELECT 
+                royalrooms.room_id, 
+                royalrooms.roomname, 
+                roomfeatures.feature_id, 
+                roomfeatures.size, 
+                roomfeatures.entertainment, 
+                roomfeatures.connectivity, 
+                roomfeatures.btlr_service, 
+                roomfeatures.guests, 
+                roomfeatures.location_r, 
+                roomfeatures.occupancy, 
+                roomfeatures.refreshment, 
+                roomfeatures.extras
+            FROM room_relation
+            JOIN royalrooms ON room_relation.room_id = royalrooms.room_id
+            JOIN roomfeatures ON room_relation.feature_id = roomfeatures.feature_id;
+        `;
+        
+        const featureRes = await pg.query(query);
+        // console.log(featureRes);
+        const roomFeatures = featureRes.rows;
+        // console.log(roomFeatures);
+
+        if (roomFeatures.length > 0) {
+            const features = roomFeatures.map((room) => {
+                const { size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras } = room;
 
                 return {
                     size,
@@ -81,15 +103,18 @@ app.get("/getFeatures", async (req, res) => {
                     refreshment,
                     extras
                 };
-            }));
+            });
             res.json(features);
         } else {
-            console.log("Error Fetching Features!!!");
+            console.log("No features found for rooms.");
+            res.status(404).send("No features found for rooms.");
         }
     } catch (error) {
-        console.log("Error Fetcging Data", error);
+        console.log("Error Fetching Data", error);
+        res.status(500).send("Error retrieving data.");
     }
-})
+});
+
 
 app.post("/addroom", upload.single('roomImg'), async (req, res) => {
     const { roomname, staytype, roomprice } = req.body;
