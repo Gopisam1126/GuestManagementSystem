@@ -65,3 +65,13 @@
     flex-wrap: wrap;
     gap: 2vw;
 }
+.r-a-stat {
+    color: green;
+}
+.r-na-stat {
+    color: red;
+}
+.ad-room-head {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}

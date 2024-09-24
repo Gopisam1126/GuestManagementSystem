@@ -107,7 +107,7 @@
 }
 .book-button {
     margin-top: 2rem;
-    margin-left: 20vw;
+    margin-left: 10vw;
 }
 .bk-btn {
     padding: 0.5rem 0.5vw;
@@ -118,4 +118,7 @@
     color: var(--colorbckup);
     font-size: var(--font-size-btn1);
     cursor: pointer;
+}
+.room-name-type {
+    width: 25vw;
 }

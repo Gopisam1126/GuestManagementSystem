@@ -13,6 +13,7 @@ function Admin() {
     const [roomImg, setRoomImg] = useState(null);
     const [uploaded, setUploaded] = useState(null);
     const [rooms, setRooms] = useState([]);
+    const [isAvailable, setIsAvailable] = useState(true)
 
     const [featureData, setFeatureData] = useState({
         size: "",
@@ -110,10 +111,10 @@ function Admin() {
                     <Header2 />
                 </div>
                 <div className="admin-body-container">
-                    <div className="admin-guest-lists">
+                    {/* <div className="admin-guest-lists">
                         <h4 className="Guests">Guests</h4>
                         <div className="guest-list-container"></div>
-                    </div>
+                    </div> */}
                     <div className="admin-room-lists">
                         <h4 className="ad-room-head">Rooms List</h4>
                         <ul>
@@ -126,6 +127,15 @@ function Admin() {
                                         <p className="ad-room-name" key={room.room_id}>{room.roomname}</p>
                                         <p className="ad-stay-type" key={room.room_id}>{room.staytype}</p>
                                         <p className="ad-room-price" key={room.room_id}>${room.roomprice}</p>
+                                        <div className="ad-room-stat">
+                                            {
+                                                isAvailable ? <p className="r-a-stat">
+                                                    Available
+                                                </p> : <p className="r-na-stat">
+                                                    Not Available
+                                                </p>
+                                            }
+                                        </div>
                                     </div>
                                 </li>
                             ))}
