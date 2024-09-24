@@ -150,13 +150,7 @@ function Admin() {
                                 <input type="text" placeholder="Add Room Name" className="ad-room-name" name="roomname" onChange={handleInputChange} /><br />
                                 <input type="text" placeholder="Add Type" className="type-stay" name="staytype" onChange={handleInputChange} /><br />
                                 <input type="text" placeholder="Add Price" className="ad-room-price" name="roomprice" onChange={handleInputChange} /><br />
-                                <input type="submit" value="Submit" />
-                                <p>{uploaded ? "Data Uploaded" : "Error Uploading"}</p>
-                            </form>
-                        </div>
-                        <div className="add-amenities-container">
-                            <h4 className="add-amenities">Add Room Features</h4>
-                            <form onSubmit={handleFeatureUpload}>
+                                <p className="f-head">Features : </p>
                                 <label htmlFor="size">Size</label>
                                 <input type="text" name="ad_r_size" className="ad-r-size" onChange={handleFeatureIC} /><br />
                                 <label htmlFor="entertainment">Entertainment</label>
@@ -175,6 +169,14 @@ function Admin() {
                                 <input type="text" name="ad_r_R" className="ad-r-R" onChange={handleFeatureIC} /><br />
                                 <label htmlFor="extras">Extras</label>
                                 <input type="text" name="ad_r_Extras" className="ad-r-Extras" onChange={handleFeatureIC} /><br />
+                                <input type="submit" value="Submit" />
+                                <p>{uploaded ? "Data Uploaded" : "Error Uploading"}</p>
+                            </form>
+                        </div>
+                        <div className="add-amenities-container">
+                            <h4 className="add-amenities">Add Room Features</h4>
+                            <form onSubmit={handleFeatureUpload}>
+                                
                                 <input type="submit" name="f-submit" value="Submit" />
                             </form>
                         </div>

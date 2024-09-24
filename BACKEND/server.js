@@ -119,8 +119,8 @@ app.post("/addroom", upload.single('roomImg'), async (req, res) => {
 
     try {
         const addroomres = await pg.query(
-            `INSERT INTO royalrooms (roomimg, roomname, staytype, roomprice) VALUES ($1, $2, $3, $4) RETURNING *`, 
-            [roomImg.buffer, roomname, staytype, roomprice]
+            `INSERT INTO royalrooms (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras, roomname, staytype, roomprice, roomimg) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`, 
+            [size, entertainment, btlr_service, guests, location_r, occupancy, refreshment, extras,roomname, staytype, roomprice, roomImg.buffer]
         );
 
         res.json(addroomres.rows[0]);
