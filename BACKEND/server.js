@@ -69,7 +69,7 @@ app.get("/room/view/:id", async (req, res) => {
         const roomdet = await pg.query(
             `SELECT * FROM roomfeatures WHERE id = $1`, [roomId]
         );
-        console.log(roomdet);
+        // console.log(roomdet);
         
         if (roomdet.rows.length > 0) {
             const {

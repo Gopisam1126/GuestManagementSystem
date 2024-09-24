@@ -68,3 +68,54 @@
 .amenities-head {
     text-transform: uppercase;
 }
+.room-name-type {
+    display: flex;
+    align-items: center;
+    padding-top: 2rem;
+}
+.room-detail-name {
+    color: var(--colorS);
+}
+.room-detail-type {
+    opacity: 0.8;
+    margin-top: 0.5rem;
+    margin-left: 1.2vw;
+}
+.rd-price {
+    font-weight: 600;
+}
+.rd-per-n {
+    opacity: 0.5;
+}
+.green {
+    color: green;
+}
+.red {
+    color: red;
+}
+.r-price-stat {
+    display: flex;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+.room-stat {
+    padding-left: 0.7vw;
+}
+.r-b-flex-c {
+    display: flex;
+    align-items: center;
+}
+.book-button {
+    margin-top: 2rem;
+    margin-left: 20vw;
+}
+.bk-btn {
+    padding: 0.5rem 0.5vw;
+    width: 10rem;
+    border: 1px solid transparent;
+    border-radius: 5px;
+    background-color: var(--colorS);
+    color: var(--colorbckup);
+    font-size: var(--font-size-btn1);
+    cursor: pointer;
+}
