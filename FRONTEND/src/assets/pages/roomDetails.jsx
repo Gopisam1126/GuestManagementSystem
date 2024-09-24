@@ -33,11 +33,11 @@ function RoomDetails() {
                             <div className="r-price-stat">
                                 <p className="room-detail-price"><span className="rd-price">{room.price}</span><span className="rd-per-n"> / Night</span></p>
                                 <div className="avail-status">
-                                    <p className={`${isAvailable ? 'green' : 'red'} room-stat`}>
+                                    <div className={`${isAvailable ? 'green' : 'red'} room-stat`}>
                                         {
                                             isAvailable ? <p>Available</p> : <p>Not Available</p>
                                         }
-                                    </p>
+                                    </div>
                                 </div>
                             </div>
                         </div>

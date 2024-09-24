@@ -69,7 +69,7 @@ app.get("/room/view/:id", async (req, res) => {
         const roomdet = await pg.query(
             `SELECT * FROM roomfeatures WHERE id = $1`, [roomId]
         );
-        // console.log(roomdet);
+        console.log(roomdet);
         
         if (roomdet.rows.length > 0) {
             const {
@@ -110,18 +110,22 @@ app.get("/room/view/:id", async (req, res) => {
 });
 
 app.post("/addroom", upload.single('roomImg'), async (req, res) => {
-    const { roomname, staytype, roomprice } = req.body;
+    console.log("Request Send");
+    
+    const { ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras ,roomname, staytype, roomprice } = req.body;
     const roomImg = req.file;
 
-    if (!roomImg) {
-        return res.status(400).send("No file Uploaded!");
-    }
+    if (!ad_r_size || !ad_r_E || !ad_r_C || !ad_r_BS || !ad_r_G || !ad_r_L || !ad_r_O || !ad_r_R || !ad_r_Extras || !roomImg) {
+        console.log("All Fields are Requires!");
+        return res.status(400).json({ error: 'All fields are required' });
+    };
 
     try {
         const addroomres = await pg.query(
-            `INSERT INTO royalrooms (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras, roomname, staytype, roomprice, roomimg) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`, 
-            [size, entertainment, btlr_service, guests, location_r, occupancy, refreshment, extras,roomname, staytype, roomprice, roomImg.buffer]
+            `INSERT INTO roomfeatures (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras, roomname, staytype, roomprice, roomimg) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13) RETURNING *`, 
+            [ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras,roomname, staytype, roomprice, roomImg.buffer]
         );
+        console.log(addroomres);
 
         res.json(addroomres.rows[0]);
     } catch (error) {
@@ -130,23 +134,19 @@ app.post("/addroom", upload.single('roomImg'), async (req, res) => {
     }
 });
 
-app.post("/addrf", async (req, res) => {
-    const {ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras} = req.body;
+// app.post("/addrf", async (req, res) => {
+//     const {ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras} = req.body;
 
-    if (!ad_r_size || !ad_r_E || !ad_r_C || !ad_r_BS || !ad_r_G || !ad_r_L || !ad_r_O || !ad_r_R || !ad_r_Extras) {
-        return res.status(400).json({ error: 'All fields are required' });
-    }
+//     try {
+//         const addroomftrs = await pg.query(
+//             `INSERT INTO roomfeatures (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING*`, [ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras]
+//         );
 
-    try {
-        const addroomftrs = await pg.query(
-            `INSERT INTO roomfeatures (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING*`, [ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras]
-        );
-
-        res.json(addroomftrs.rows[0]);
-    } catch (error) {
-        console.log("Error uploading Data!!", error);
-    }
-})
+//         res.json(addroomftrs.rows[0]);
+//     } catch (error) {
+//         console.log("Error uploading Data!!", error);
+//     }
+// })
 
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
