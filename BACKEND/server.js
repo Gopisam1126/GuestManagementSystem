@@ -30,12 +30,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/roomdetails", async (req, res) => {
     try {
-        const rd = await pg.query(`SELECT roomname, staytype, roomprice, roomimg FROM roomfeatures`);
+        const rd = await pg.query(`SELECT id, roomname, staytype, roomprice, roomimg FROM roomfeatures`);
         // console.log(rd);
         
         if (rd.rows.length > 0) {
             const rooms = await Promise.all(rd.rows.map(async (room) => {
-                let {roomname, staytype, roomprice, roomimg } = room;
+                let {id, roomname, staytype, roomprice, roomimg } = room;
 
                 if (typeof roomimg === 'string') {
                     roomimg = Buffer.from(roomimg, 'base64');
@@ -45,6 +45,7 @@ app.get("/roomdetails", async (req, res) => {
                 const mimeType = imgType ? imgType.mime : 'image/jpg';
 
                 return {
+                    id,
                     roomname,
                     staytype,
                     roomprice,
@@ -64,18 +65,13 @@ app.get("/roomdetails", async (req, res) => {
 });
 
 app.get("/room/view/:id", async (req, res) => {
-    const roomId = req.params.id;  // Extracting the room ID from the URL
-    console.log("Room ID from URL:", roomId);  // Log for debugging
-    
-    // if (!roomId) {
-    //     return res.status(400).json({ message: "Room ID is missing from the URL" });
-    // }
+    const id = req.params.id  // Extracting the room ID from the URL
+    console.log("Room ID from URL:", id);  // Log for debugging
     
     try { 
         const roomdet = await pg.query(
-            `SELECT * FROM roomfeatures WHERE id = $1`, [roomId]
+            `SELECT * FROM roomfeatures WHERE id = $1`, [id]
         );
-        // console.log(roomdet);
         
         if (roomdet.rows.length > 0) {
             const {
@@ -106,7 +102,7 @@ app.get("/room/view/:id", async (req, res) => {
             res.setHeader('Content-Type', 'application/json');
             res.json(featuresArray);  // Returning the array
         } else {
-            console.log("No data found for room_id: ", roomId);
+            console.log("No data found for room_id: ", id);
             res.status(404).json({ message: "Room features not found." });
         }
     } catch (error) {

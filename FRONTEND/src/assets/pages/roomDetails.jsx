@@ -1,14 +1,14 @@
 /* eslint-disable no-unused-vars */
-import { useParams } from "react-router-dom";
 // import Rooms from "../constants/constants";
 import Header2 from "../component/header2";
 import "../pageStyles/roomDetails.css";
 import Amenities from "../component/amenities";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 function RoomDetails() {
 
-    const { id } = useParams();  // Extract the id from the URL
+    const { id } = useParams();
     const [isAvailable, setIsAvailable] = useState(true)
     const [room, setRoom] = useState([]);
 
@@ -22,6 +22,8 @@ function RoomDetails() {
         async function getRoomDet() {
             try {
                 const rdRes = await axios.get(`http://localhost:3000/room/view/${id}`);
+                console.log(rdRes);
+                
                 setRoom(rdRes.data);
             } catch (error) {
                 console.log("Error fetching data", error);

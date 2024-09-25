@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 
 function BookRooms() {
+    // const { id } = useParams();
     // Properly define the type of room as an array of objects (for TypeScript)
     const [rooms, setRooms] = useState([]);
 
@@ -27,7 +28,7 @@ function BookRooms() {
                 {rooms.length > 0 ? (
                     rooms.map((room) => (
                         <div className="room-list" key={room.id}>
-                            <Link to={`/rooms/${room.id}`} style={{ textDecoration: "none" }}>
+                            <Link to={`/room/view/${room.id}`} style={{ textDecoration: "none" }}>
                                 <img
                                     src={`data:${room.mimeType};base64,${room.file}`}
                                     alt="room-Thumbnail"
