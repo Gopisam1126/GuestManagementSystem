@@ -30,7 +30,7 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/roomdetails", async (req, res) => {
     try {
-        const rd = await pg.query(`SELECT id, roomname, staytype, roomprice, roomimg FROM roomfeatures`);
+        const rd = await pg.query(`SELECT roomname, staytype, roomprice, roomimg FROM roomfeatures`);
         // console.log(rd);
         
         if (rd.rows.length > 0) {
@@ -45,7 +45,6 @@ app.get("/roomdetails", async (req, res) => {
                 const mimeType = imgType ? imgType.mime : 'image/jpg';
 
                 return {
-                    id,
                     roomname,
                     staytype,
                     roomprice,
