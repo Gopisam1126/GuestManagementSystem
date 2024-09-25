@@ -24,19 +24,6 @@ function Admin() {
     const [rooms, setRooms] = useState([]);
     const [isAvailable, setIsAvailable] = useState(true)
 
-    // const [featureData, setFeatureData] = useState({
-    //     size: "",
-    //     Entertainment: "",
-    //     connectivity: "",
-    //     butlerserv: "",
-    //     guest: "",
-    //     loc: "",
-    //     occupancy: "",
-    //     refreshment: "",
-    //     extras: "",
-    // });
-    // const [features, setFeatures] = useState([]);
-
     useEffect(() => {
         async function getRoomDet() {
             try {
@@ -86,33 +73,6 @@ function Admin() {
         }
     }
 
-    // async function handleFeatureUpload(e) {
-    //     e.preventDefault();
-
-    //     if (!featureData.ad_r_size || !featureData.ad_r_E || !featureData.ad_r_C || !featureData.ad_r_BS || 
-    //         !featureData.ad_r_G || !featureData.ad_r_L || !featureData.ad_r_O || !featureData.ad_r_R || !featureData.ad_r_Extras) {
-    //         alert("All fields are required!");
-    //         return;
-    //     }
-
-    //     const fData = new FormData();
-    //     Object.keys(featureData).forEach((key) => {
-    //         fData.append(key, featureData[key]);
-    //     })
-
-    //     try {
-    //         const fDatares = await axios.post("http://localhost:3000/addrf", fData, {
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             }
-    //         });
-    //         setFeatures(prevFeature => [...prevFeature, fDatares.data]);
-    //         console.log("Data Uploaded", fDatares.data);
-    //     } catch (error) {
-    //         console.log("Error Uploading Data",error);
-    //     }
-    // }
-
     return (
         <>
             <section className="admin-section">
@@ -120,10 +80,6 @@ function Admin() {
                     <Header2 />
                 </div>
                 <div className="admin-body-container">
-                    {/* <div className="admin-guest-lists">
-                        <h4 className="Guests">Guests</h4>
-                        <div className="guest-list-container"></div>
-                    </div> */}
                     <div className="admin-room-lists">
                         <h4 className="ad-room-head">Rooms List</h4>
                         <ul>

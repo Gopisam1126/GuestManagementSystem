@@ -30,12 +30,12 @@ app.use(express.urlencoded({ extended: true }));
 
 app.get("/roomdetails", async (req, res) => {
     try {
-        const rd = await pg.query(`SELECT * FROM royalrooms`);
+        const rd = await pg.query(`SELECT id, roomname, staytype, roomprice, roomimg FROM roomfeatures`);
         // console.log(rd);
         
         if (rd.rows.length > 0) {
             const rooms = await Promise.all(rd.rows.map(async (room) => {
-                let { roomimg, roomname, staytype, roomprice } = room;
+                let {roomname, staytype, roomprice, roomimg } = room;
 
                 if (typeof roomimg === 'string') {
                     roomimg = Buffer.from(roomimg, 'base64');
@@ -45,10 +45,11 @@ app.get("/roomdetails", async (req, res) => {
                 const mimeType = imgType ? imgType.mime : 'image/jpg';
 
                 return {
-                    file: roomimg.toString("base64"),
+                    id,
                     roomname,
                     staytype,
                     roomprice,
+                    file: roomimg.toString("base64"),
                     mimeType,
                 };
             }));
@@ -64,12 +65,18 @@ app.get("/roomdetails", async (req, res) => {
 });
 
 app.get("/room/view/:id", async (req, res) => {
-    const roomId = req.params.id;
+    const roomId = req.params.id;  // Extracting the room ID from the URL
+    console.log("Room ID from URL:", roomId);  // Log for debugging
+    
+    // if (!roomId) {
+    //     return res.status(400).json({ message: "Room ID is missing from the URL" });
+    // }
+    
     try { 
         const roomdet = await pg.query(
             `SELECT * FROM roomfeatures WHERE id = $1`, [roomId]
         );
-        console.log(roomdet);
+        // console.log(roomdet);
         
         if (roomdet.rows.length > 0) {
             const {
