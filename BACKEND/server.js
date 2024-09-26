@@ -66,12 +66,27 @@ app.get("/roomdetails", async (req, res) => {
 
 app.get("/room/view/:id", async (req, res) => {
     const id = req.params.id  // Extracting the room ID from the URL
-    console.log("Room ID from URL:", id);  // Log for debugging
+    // console.log("Room ID from URL:", id);  // Log for debugging
     
     try { 
         const roomdet = await pg.query(
-            `SELECT * FROM roomfeatures WHERE id = $1`, [id]
+            `SELECT size,
+                entertainment,
+                connectivity,
+                btlr_service,
+                guests,
+                location_r,
+                occupancy,
+                refreshment,
+                extras,
+                roomname,
+                staytype,
+                roomprice,
+                roomimg
+            FROM roomfeatures WHERE id = $1`, [id]
         );
+        // console.log(roomdet);
+        
         
         if (roomdet.rows.length > 0) {
             const {
@@ -84,23 +99,42 @@ app.get("/room/view/:id", async (req, res) => {
                 occupancy,
                 refreshment,
                 extras,
+                roomname,
+                staytype,
+                roomprice,
+                roomimg
             } = roomdet.rows[0];
 
-            // Structuring the response as an array of key-value pairs
-            const featuresArray = [
-                { feature: "Size", value: size },
-                { feature: "Entertainment", value: entertainment },
-                { feature: "Connectivity", value: connectivity },
-                { feature: "Butler Service", value: btlr_service },
-                { feature: "Guests", value: guests },
-                { feature: "Location", value: location_r },
-                { feature: "Occupancy", value: occupancy },
-                { feature: "Refreshment", value: refreshment },
-                { feature: "Extras", value: extras }
-            ];
+            // if (typeof roomimg === 'string') {
+            //     roomimg = Buffer.from(roomimg, 'base64');
+            // }
 
-            res.setHeader('Content-Type', 'application/json');
-            res.json(featuresArray);  // Returning the array
+            if (!(roomimg instanceof Buffer)) {
+                roomimg = Buffer.from(roomimg, 'base64');
+            }
+
+            const imgType = imageType(roomimg); // Remove await, imageType is synchronous
+            const mimeType = imgType ? imgType.mime : 'image/jpeg';
+
+            // const imgType = await imageType(roomimg);
+            // const mimeType = imgType ? imgType.mime : 'image/jpg';
+
+            res.json({
+                size,
+                entertainment,
+                connectivity,
+                btlr_service,
+                guests,
+                location_r,
+                occupancy,
+                refreshment,
+                extras,
+                roomname,
+                staytype,
+                roomprice,
+                file: roomimg ? roomimg.toString("base64") : null,
+                mimeType
+            });
         } else {
             console.log("No data found for room_id: ", id);
             res.status(404).json({ message: "Room features not found." });
@@ -135,20 +169,6 @@ app.post("/addroom", upload.single('roomImg'), async (req, res) => {
         res.status(500).send('Error uploading Room Details');
     }
 });
-
-// app.post("/addrf", async (req, res) => {
-//     const {ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras} = req.body;
-
-//     try {
-//         const addroomftrs = await pg.query(
-//             `INSERT INTO roomfeatures (size, entertainment, connectivity, btlr_service, guests, location_r, occupancy, refreshment, extras) VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING*`, [ad_r_size, ad_r_E, ad_r_C, ad_r_BS, ad_r_G, ad_r_L, ad_r_O, ad_r_R, ad_r_Extras]
-//         );
-
-//         res.json(addroomftrs.rows[0]);
-//     } catch (error) {
-//         console.log("Error uploading Data!!", error);
-//     }
-// })
 
 app.listen(port, () => {
     console.log(`server running on port ${port}`);
