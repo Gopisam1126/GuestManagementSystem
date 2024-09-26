@@ -4,6 +4,7 @@ import "../pageStyles/roomDetails.css";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
+import Loader from "../component/loader";
 
 function RoomDetails() {
     const { id } = useParams();
@@ -30,7 +31,9 @@ function RoomDetails() {
     }, [id]);
 
     if (!room.roomname) {
-        return <p>Loading room details...</p>; // Handle loading state
+        return <>
+            <Loader/>
+        </> // Handle loading state
     }
 
     return (
@@ -76,45 +79,50 @@ function RoomDetails() {
                                 <table className="amenities-table">
                                     <tbody className="t-body">
                                         <tr>
-                                            <td className="detail-feature">Size:</td>
-                                            <td className="detail-value">{features.size}</td>
+                                            <td className="room-detail-name">Size:</td>
+                                            <td className="room-detail-type">{features.size}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Entertainment:</td>
-                                            <td className="detail-value">{features.entertainment}</td>
+                                            <td className="room-detail-name">Entertainment:</td>
+                                            <td className="room-detail-type">{features.entertainment}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Connectivity:</td>
-                                            <td className="detail-value">{features.connectivity}</td>
+                                            <td className="room-detail-name">Connectivity:</td>
+                                            <td className="room-detail-type">{features.connectivity}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Butler Service:</td>
-                                            <td className="detail-value">{features.btlr_service}</td>
+                                            <td className="room-detail-name">Butler Service:</td>
+                                            <td className="room-detail-type">{features.btlr_service}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Guests:</td>
-                                            <td className="detail-value">{features.guests}</td>
+                                            <td className="room-detail-name">Guests:</td>
+                                            <td className="room-detail-type">{features.guests}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Location:</td>
-                                            <td className="detail-value">{features.location_r}</td>
+                                            <td className="room-detail-name">Location:</td>
+                                            <td className="room-detail-type">{features.location_r}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Occupancy:</td>
-                                            <td className="detail-value">{features.occupancy}</td>
+                                            <td className="room-detail-name">Occupancy:</td>
+                                            <td className="room-detail-type">{features.occupancy}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Refreshment:</td>
-                                            <td className="detail-value">{features.refreshment}</td>
+                                            <td className="room-detail-name">Refreshment:</td>
+                                            <td className="room-detail-type">{features.refreshment}</td>
                                         </tr>
                                         <tr>
-                                            <td className="detail-feature">Extras:</td>
-                                            <td className="detail-value">{features.extras}</td>
+                                            <td className="room-detail-name">Extras:</td>
+                                            <td className="room-detail-type">{features.extras}</td>
                                         </tr>
                                     </tbody>
                                 </table>
                             ) : (
-                                <p>Loading features...</p>
+                                <p className="r-d-loader" style={{
+                                    textAlign: "center",
+                                    paddingTop: "50%",
+                                    fontSize: "1.8rem",
+                                    fontWeight: 600
+                                }}>Loading features...</p>
                             )}
                         </section>
                     </div>
